@@ -516,3 +516,4 @@ C:\Users\TI01\source\repos\sysgest-fullstack-master\bin\Debug\net8.0\runtimes\os
 C:\Users\TI01\source\repos\sysgest-fullstack-master\bin\Debug\net8.0\runtimes\win-arm64\native\libSkiaSharp.dll
 C:\Users\TI01\source\repos\sysgest-fullstack-master\bin\Debug\net8.0\runtimes\win-x64\native\libSkiaSharp.dll
 C:\Users\TI01\source\repos\sysgest-fullstack-master\bin\Debug\net8.0\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\TI01\source\repos\sysgest-fullstack-master\obj\Debug\net8.0\sysgest-fullstack.sourcelink.json
