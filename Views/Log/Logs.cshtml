@@ -1,0 +1,27 @@
+﻿ @model List<SysGestFullstack.Models.UserLog>
+
+@{
+    ViewData["Title"] = "Logs de Atividade";
+}
+
+<h2>Logs de Atividade</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Usuário</th>
+            <th>Ação</th>
+            <th>Data/Hora</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.UserName</td>
+                <td>@log.Action</td>
+                <td>@log.Timestamp.ToString("dd/MM/yyyy HH:mm:ss")</td>
+            </tr>
+        }
+    </tbody>
+</table>

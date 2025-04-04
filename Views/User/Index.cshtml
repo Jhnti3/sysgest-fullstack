@@ -1,0 +1,48 @@
+﻿@model List<SysGestFullstack.Models.User>
+
+<div class="mb-3 d-flex flex-wrap gap-2">
+    <a class="btn btn-success btn-lg" href="@Url.Action("ExportarExcel", "User")">
+        <i class="fas fa-file-excel"></i> Exportar Excel
+    </a>
+    <a class="btn btn-danger btn-lg" href="@Url.Action("ExportarPDF", "User")">
+        <i class="fas fa-file-pdf"></i> Exportar PDF
+    </a>
+</div>
+
+<form method="get" class="mb-3 d-flex flex-column flex-md-row gap-2">
+    <input type="text" name="searchTerm" class="form-control w-100 w-md-auto" placeholder="Buscar usuário..." value="@ViewData["SearchTerm"]" />
+    <button type="submit" class="btn btn-primary btn-lg w-100 w-md-auto">Pesquisar</button>
+</form>
+
+<h2>Usuários</h2>
+<a href="@Url.Action("Create", "User")" class="btn btn-success btn-lg">Criar Novo Usuário</a>
+
+<div class="table-responsive mt-3">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                    <td class="d-flex flex-column flex-md-row gap-2">
+                        <a asp-action="Edit" asp-controller="User" asp-route-id="@user.Id" class="btn btn-warning btn-lg">Editar</a>
+                        <form asp-action="DeleteConfirmed" asp-controller="User" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este usuário?');">
+                            <input type="hidden" name="id" value="@user.Id" />
+                            <button type="submit" class="btn btn-danger btn-lg">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

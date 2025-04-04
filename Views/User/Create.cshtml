@@ -1,0 +1,31 @@
+﻿@model SysGestFullstack.Models.User
+
+<h2>Criar Novo Usuário</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Name">Nome</label>
+        <input type="text" class="form-control" id="Name" name="Name" value="@Model?.Name" required />
+        @if (ViewData.ModelState["Name"]?.Errors.Count > 0)
+        {
+            <span class="text-danger">@ViewData.ModelState["Name"]?.Errors[0].ErrorMessage</span>
+        }
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" value="@Model?.Email" required />
+        @if (ViewData.ModelState["Email"]?.Errors.Count > 0)
+        {
+            <span class="text-danger">@ViewData.ModelState["Email"]?.Errors[0].ErrorMessage</span>
+        }
+    </div>
+    <div class="form-group">
+        <label for="Password">Senha</label>
+        <input type="password" class="form-control" id="Password" name="Password" value="@Model?.Password" required />
+        @if (ViewData.ModelState["Password"]?.Errors.Count > 0)
+        {
+            <span class="text-danger">@ViewData.ModelState["Password"]?.Errors[0].ErrorMessage</span>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
